@@ -4,11 +4,24 @@
       <h2>tempo</h2>
       <p>让你爱上音乐的律动</p>
     </div>
-    <div class="form">
-       <Input v-model="username" class="username" placeholder="用户" ></Input>
-       <Input v-model="password" class="pasword" placeholder="密码" ></Input>
+    <!-- <div class="form">
+       <Input v-model="username" class="username" clearable placeholder="用户" ></Input>
+       <Input v-model="password" class="pasword" clearable  placeholder="密码" ></Input>
        <Button type="primary" class="button" @click='login()' @keydown='login(event)' shape="circle">登录</Button>
-    </div>
+    </div> -->
+    <Form ref="formInline" class="form" :model="formInline" :rules="ruleInline" inline>
+        <FormItem prop="user">
+            <Input type="text" class="username" v-model="formInline.user" placeholder="Username">
+            </Input>
+        </FormItem>
+        <FormItem prop="password" class="pasitem">
+            <Input type="password" class="pasword" v-model="formInline.password" placeholder="Password">
+            </Input>
+        </FormItem>
+        <FormItem>
+            <Button type="primary" class="button" @click="handleSubmit('formInline')" shape="circle">登录</Button>
+        </FormItem>
+    </Form>
   </div>
 </template>
 
@@ -20,8 +33,19 @@ export default {
   },
   data () {
     return {
-      username: "1",
-      password: ""
+      formInline: {
+          user: '',
+          password: ''
+      },
+      ruleInline: {
+          user: [
+              { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+          ],
+          password: [
+              { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+              { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
+          ]
+      }
     }
   },
   methods: {
@@ -34,8 +58,22 @@ export default {
       let input = document.querySelectorAll(".ivu-input");
       input[0].classList.add("login-input");
       input[1].classList.add("login-input");
-      
-    }    
+    },
+    handleSubmit(name) {
+        this.$refs[name].validate((valid) => {
+            if (valid) {
+                let self = this;
+                this.$Message.success({
+                  content: '登录成功!',
+                  onClose: function () {
+                     self.$router.push("index")
+                  }
+                });
+            } else {
+                this.$Message.error('登录失败，请检查输入!');
+            }
+        })
+    }       
     
   }
 }
@@ -78,11 +116,14 @@ export default {
     div  {
       width: 432px;
       height: 51px;
-      display: block;
       margin: 0 auto;
     }
-    .pasword {
+    div.pasitem {
       margin-top: 52px;
+    }
+    .pasword {
+      
+      position: relative;
     }
   }
 }

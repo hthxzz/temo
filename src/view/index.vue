@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="wrap">
     <div class="head">
        <Icon type="navicon-round" class="icon" @click.native='gotoSet()'></Icon>
        <Input v-model="search" icon="ios-search" class="search" placeholder="Enter something.."></Input>
@@ -50,6 +50,9 @@
 <script>
 export default {
   name: 'index',
+  mounted:function() {
+    this.changeInputSize();
+  },
   data () {
     return {
       search: "",
@@ -69,6 +72,10 @@ export default {
         alert("123");
       }
     },
+  changeInputSize() {
+      let input = document.querySelectorAll(".ivu-input");
+      input[0].classList.add("login-input");
+    },
     gotoSet() {
       this.$router.push('setting');
     }
@@ -79,10 +86,32 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.container{
+.wrap {
     background-color: #26263E;
     font-size: 18px;
     text-align: left;
+    .head {
+      height: 160px;
+      .icon {
+        height: 38px;
+        margin-left: 40px;
+      }
+      .search {
+        width: 500px;
+        height: 52px;
+        margin-left: 39px;
+      }
+      img {
+        height: 57px;
+        width: 57px;
+        margin-left: 30px;
+      }
+    }
+    .serching {
+      height: 230px;
+    }
+
+
 }
 .hot-title label{
   color: #0EAC98;
