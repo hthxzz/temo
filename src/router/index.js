@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import start from '@/view/start'
+import login from '@/view/login'
 import index from '@/view/index'
 import play from '@/view/play'
 import setting from '@/view/setting'
@@ -12,8 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'start',
-      component: start
+      name: 'login',
+      component: login
     },
     {
       path: '/index',

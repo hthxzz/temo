@@ -34,6 +34,7 @@ export default {
       let input = document.querySelectorAll(".ivu-input");
       input[0].classList.add("login-input");
       input[1].classList.add("login-input");
+      
     }    
     
   }
