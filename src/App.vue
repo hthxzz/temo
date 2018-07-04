@@ -22,6 +22,8 @@ export default {
   width: 750px;
   height: 1340px;
   color: #2c3e50;
+  
+	font-family: arial, georgia, verdana, simsun, helvetica, sans-serif;
 }
 #view {
   position: absolute;

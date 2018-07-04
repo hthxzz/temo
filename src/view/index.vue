@@ -7,7 +7,7 @@
     </div>
     <div class="serching">
       <label class="hot-serching">大家正在搜</label>
-      <div>
+      <div class="hot-bar">
         <ul class="clearfix search-label">
           <li v-for="item in mostSearch">
             {{item}}
@@ -57,7 +57,7 @@ export default {
     return {
       search: "",
       password: "",
-      mostSearch: ["周杰伦","薛之谦","刘若英","划水","夜跑"],
+      mostSearch: ["周杰伦","薛之谦","刘若英","划水","夜跑","肌肉爆发"],
       weekHotList: [
         {url: '../assets/tran.png', listener:100, title: '野兽派必备音乐'}
       ],
@@ -109,6 +109,30 @@ export default {
     }
     .serching {
       height: 230px;
+      label {
+        height: 80px;
+        display: inline-block;
+        margin-left: 43px;
+        font-size: 20px;
+        letter-spacing: 5px;
+        transform: translateY(24px);
+      }
+      .hot-bar  {
+        ul  {
+          margin-left: 43px;
+          li  {
+              color: #FEFEFC;
+              border: 2px solid #fff;
+              border-radius: 32px;
+              width: fit-content;
+              padding: 4px;
+              font-size: 24px;
+              float: left;
+              padding: 12px 25px;
+              margin-left: 10px;
+          }
+        }
+      }
     }
 
 
@@ -133,15 +157,7 @@ export default {
       width: 220px;
 }
 .search-label li {
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  width: fit-content;
-  padding: 4px;
-  font-size: 15px;
-  float: left;
-  padding: 0 14px;
-  margin-left: 10px;
+
 }
 .clearfix:after{
   content: "";

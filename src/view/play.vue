@@ -67,8 +67,7 @@ export default {
       playing: '',
       bpm: 135,
       play: true,
-      url: 'https://static.bootcss.com/www/assets/img/bootcdn.png?1522827096909',
-      src: 'http://m10.music.126.net/20180410231011/c62a666ca517137ce95a4f8d03efaafe/ymusic/41f8/3c88/8b60/8454e61035dec41b9c906428e9bc218a.mp3',
+      src: 'http://m10.music.126.net/20180704223506/8ac350a8f3d4528a39daab98842ce40b/ymusic/6891/ef9b/8342/653ec44258e053f06d5d592283bd5639.mp3',
       playSet: {
         autoplay: false,
         volume: 0.1
@@ -105,6 +104,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-   @import "../styles/scss/play";
-
+  audio {
+    height: 200px;
+    width: 200px;
+  }
 </style>
