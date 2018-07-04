@@ -31,13 +31,9 @@ export default {
       }
     },
     changeColor() {
-      document.querySelectorAll(".ivu-input")[0].style.backgroundColor = "#222342";
-      document.querySelectorAll(".ivu-input")[1].style.backgroundColor = "#222342";
-      document.querySelectorAll(".ivu-input")[0].classList.add("inputSelf");
-      document.querySelectorAll(".ivu-input")[0].style.height = "100%";
-      document.querySelectorAll(".ivu-input")[1].style.height = "100%";
-      document.querySelectorAll(".ivu-input")[0].style.borderRadius = "29px";
-      document.querySelectorAll(".ivu-input")[1].style.borderRadius = "29px";
+      let input = document.querySelectorAll(".ivu-input");
+      input[0].classList.add("login-input");
+      input[1].classList.add("login-input");
     }    
     
   }
