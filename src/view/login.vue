@@ -24,7 +24,16 @@
     </Form>
   </div>
 </template>
-
+ctx.beginPath();
+// 位移到圆心，方便绘制
+ctx.translate(100, 100);
+// 移动到圆心
+ctx.moveTo(0, 0);
+// 绘制圆弧
+ctx.arc(0, 0, 50, 0, Math.PI * 1.5);
+// 闭合路径
+ctx.closePath();
+ctx.fill();
 <script>
 export default {
   name: 'start',
