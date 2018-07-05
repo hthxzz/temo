@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="head">
       <h2>tempo</h2>
-      <p>让你爱上音乐的律动</p>
+      <p>让你爱上律动</p>
     </div>
     <!-- <div class="form">
        <Input v-model="username" class="username" clearable placeholder="用户" ></Input>
@@ -29,7 +29,10 @@
 export default {
   name: 'start',
   mounted:function() {
-    this.changeColor();
+    this.changeInputSize();
+  },
+  updated:  function () {
+    this.changeInputSize();
   },
   data () {
     return {
@@ -54,7 +57,7 @@ export default {
         this.$router.push('index');
       }
     },
-    changeColor() {
+    changeInputSize() {
       let input = document.querySelectorAll(".ivu-input");
       input[0].classList.add("login-input");
       input[1].classList.add("login-input");
