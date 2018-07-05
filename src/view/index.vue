@@ -71,9 +71,6 @@ export default {
       password: "",
       mostSearch: ["周杰伦","薛之谦","刘若英","划水","夜跑","肌肉爆发"],
       weekHotList: [
-        {url: 'http://img5.imgtn.bdimg.com/it/u=1459496973,4239757056&fm=27&gp=0.jpg', listener:100, title: '野兽派必备音乐'},
-        {url: 'http://img5.imgtn.bdimg.com/it/u=1459496973,4239757056&fm=27&gp=0.jpg', listener:100, title: '野兽派必备音乐'},
-        {url: 'http://img5.imgtn.bdimg.com/it/u=1459496973,4239757056&fm=27&gp=0.jpg', listener:100, title: '野兽派必备音乐'},
          {url: 'http://img5.imgtn.bdimg.com/it/u=1459496973,4239757056&fm=27&gp=0.jpg', listener:100, title: '野兽派必备音乐'}
       ],
       newMusic: [
@@ -192,8 +189,7 @@ export default {
       .music-menu {
         position: relative;
         ul  {
-          position: absolute;
-           width: 2000px;
+          // position: absolute;
           li {
             width: 438px;
             height: 238px;
