@@ -1,8 +1,13 @@
 <template>
   <div id="app">
+    
     <transition name="slide-leftt">
-      <router-view id="view"></router-view>
-    </transition>
+      <keep-alive>
+        <router-view id="view"></router-view>
+      </keep-alive>
+    </transition>      
+    
+
     
   </div>
 </template>

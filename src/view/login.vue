@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="head">
       <h2>tempo</h2>
-      <p>让你爱上音乐的律动</p>
+      <p>让你爱上律动</p>
     </div>
     <!-- <div class="form">
        <Input v-model="username" class="username" clearable placeholder="用户" ></Input>
@@ -24,12 +24,24 @@
     </Form>
   </div>
 </template>
-
+ctx.beginPath();
+// 位移到圆心，方便绘制
+ctx.translate(100, 100);
+// 移动到圆心
+ctx.moveTo(0, 0);
+// 绘制圆弧
+ctx.arc(0, 0, 50, 0, Math.PI * 1.5);
+// 闭合路径
+ctx.closePath();
+ctx.fill();
 <script>
 export default {
   name: 'start',
   mounted:function() {
-    this.changeColor();
+    this.changeInputSize();
+  },
+  updated:  function () {
+    this.changeInputSize();
   },
   data () {
     return {
@@ -54,7 +66,7 @@ export default {
         this.$router.push('index');
       }
     },
-    changeColor() {
+    changeInputSize() {
       let input = document.querySelectorAll(".ivu-input");
       input[0].classList.add("login-input");
       input[1].classList.add("login-input");
